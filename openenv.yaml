@@ -1,0 +1,29 @@
+ name: calendar_meeting_scheduler_env
+ version: 0.1.0
+ summary: Multi-user calendar and meeting scheduling simulator.
+ description: >
+   A deterministic environment that models a small organization with personal calendars,
+   meeting requests, time zones, and scheduling constraints across a short horizon.
+ author:
+   name: Placeholder Author
+   contact: placeholder@example.com
+ server:
+   host: 0.0.0.0
+   port: 7860
+ endpoints:
+   reset: /reset
+   step: /step
+   state: /state
+   tasks: /tasks
+   grader: /grader
+   baseline: /baseline
+ tasks:
+   - id: calendar_easy_1v1
+     difficulty: easy
+     summary: Schedule one or two short 1:1 meetings without conflicts.
+   - id: calendar_team_fairness
+     difficulty: medium
+     summary: Schedule team meetings across two time zones while keeping daily caps and fairness.
+   - id: calendar_multi_timezone_robust
+     difficulty: hard
+     summary: Multi-day planning across multiple time zones with load balancing and stability.
