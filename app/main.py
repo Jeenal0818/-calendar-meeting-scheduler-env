@@ -19,12 +19,12 @@ def home():
     return "<h1>FINAL WORKING BUILD v10 </h1>"
 
 @app.post("/reset")
-def reset(inp):
+def reset(inp: ResetInput):
     st = ACTIVE_ENV.reset(inp.task_id, inp.seed)
     return {"state": st}
 
 @app.post("/step")
-def step(inp):
+def step(inp: StepInput):
     st, reward, done = ACTIVE_ENV.step(inp.task_id, inp.action)
     return {"state": st, "reward": reward, "done": done}
 
